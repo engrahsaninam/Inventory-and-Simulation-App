@@ -16,7 +16,7 @@
                 <input type="text" class="form-control" id="leadTime" name="lead_time" placeholder="Enter lead time adjustment">
             </div>
             <div class="mb-3">
-                <label for="serviceLevel" class="form-label">Service Level</label>
+                <label for="serviceLevel" class="form-label">Service Level ( 0-1 ) </label>
                 <input type="text" class="form-control" id="serviceLevel" name="service_level" placeholder="Enter service level">
             </div>
             <div class="mb-3">
@@ -25,8 +25,15 @@
             </div>
             <div class="mb-3">
                 <label for="benchmark" class="form-label">Benchmark</label>
-                <input type="text" class="form-control" id="benchmark" name="benchmark" placeholder="Enter benchmark">
+                <select class="form-select" id="benchmark" name="benchmark">
+                    <option value="No benchmark">No benchmark</option>
+                    <option value="Current Min">Current Min</option>
+                    <option value="Max Order">Max Order</option>
+                    <option value="Both Current Min & Max Order">Both Current Min & Max Order</option>
+                    <option value="Slow Moving Items">Slow Moving Items</option>
+                </select>
             </div>
+
             <div class="mb-3">
                 <label for="benchmarkFile" class="form-label">Browse</label>
                 <input type="file" class="form-control" id="benchmarkFile" name="filedata" placeholder="Select benchmark file">
