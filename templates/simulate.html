@@ -9,28 +9,22 @@
 </head>
 <body>
     <div class="container mt-5">
-        <form action="/optimizer/"  method="post" enctype="multipart/form-data">
+        <form action="/simulation/"  method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="leadTime" class="form-label">Lead Time Adjustment</label>
-                <input type="text" class="form-control" id="leadTime" name="lead_time" placeholder="Enter lead time adjustment">
+                <label for="leadTime" class="form-label">Sim Process</label>
+                <input type="text" class="form-control" id="leadTime" name="sim_process_file_code" placeholder="Enter lead time adjustment">
             </div>
             <div class="mb-3">
-                <label for="serviceLevel" class="form-label">Service Level</label>
-                <input type="text" class="form-control" id="serviceLevel" name="service_level" placeholder="Enter service level">
+                <label for="serviceLevel" class="form-label">Sim process row code</label>
+                <input type="text" class="form-control" id="serviceLevel" name="sim_process_row_code" placeholder="Enter service level">
             </div>
             <div class="mb-3">
-                <label for="reviewPeriod" class="form-label">Review Period</label>
-                <input type="text" class="form-control" id="reviewPeriod" name="review_period" placeholder="Enter review period">
+                <label for="reviewPeriod" class="form-label">sim save output code</label>
+                <input type="text" class="form-control" id="reviewPeriod" name="sim_save_output_code" placeholder="Enter review period">
             </div>
-            <div class="mb-3">
-                <label for="benchmark" class="form-label">Benchmark</label>
-                <input type="text" class="form-control" id="benchmark" name="benchmark" placeholder="Enter benchmark">
-            </div>
-            <div class="mb-3">
-                <label for="benchmarkFile" class="form-label">Browse</label>
-                <input type="file" class="form-control" id="benchmarkFile" name="filedata" placeholder="Select benchmark file">
-            </div>
+          
+          
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

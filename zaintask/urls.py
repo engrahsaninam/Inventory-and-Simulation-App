@@ -20,5 +20,8 @@ from home import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",views.index,name=""),
+    path("",views.home,name=""),
+    path("optimizer/",views.index,name="optimizer"),
+     path("simulation/",views.simulation,name="simulation"),
+
 ]
