@@ -12,18 +12,40 @@
         <form action="/simulation/"  method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="leadTime" class="form-label">Sim Process</label>
-                <input type="text" class="form-control" id="leadTime" name="sim_process_file_code" placeholder="Enter lead time adjustment">
+                <label for="leadTime" class="form-label">Simulation Period</label>
+                <input type="number" class="form-control" id="leadTime" name="sim_process_file_code" placeholder="Enter lead time adjustment">
             </div>
             <div class="mb-3">
-                <label for="serviceLevel" class="form-label">Sim process row code</label>
-                <input type="text" class="form-control" id="serviceLevel" name="sim_process_row_code" placeholder="Enter service level">
+                <label for="leadTime" class="form-label">Select duration:</label>
+                <select class="form-select" id="leadTime" name="months">
+                    <option value="months">Months</option>
+                    <option value="days">Days</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="serviceLevel" class="form-label">composition deviation %</label>
+                <input type="number" class="form-control" id="serviceLevel" name="sim_process_row_code" placeholder="0.00">
             </div>
             <div class="mb-3">
-                <label for="reviewPeriod" class="form-label">sim save output code</label>
-                <input type="text" class="form-control" id="reviewPeriod" name="sim_save_output_code" placeholder="Enter review period">
+                <label for="reviewPeriod" class="form-label">price unit if Na in file </label>
+                <input type="number" class="form-control" id="reviewPeriod" name="sim_save_output_code" placeholder="Enter review period">
             </div>
-          
+            <div class="mb-3">
+                <label for="removeNegative" class="form-label">Remove Negative</label>
+                <input type="checkbox" class="form-check-input" id="removeNegative" name="cb">
+            </div>
+            
+            <div class="mb-3">
+                <label for="roundLeadTime" class="form-label">Round Lead Time</label>
+                <input type="checkbox" class="form-check-input" id="roundLeadTime" name="cb1">
+            </div>
+            
+            
+            <div class="mb-3">
+                <label for="benchmarkFile" class="form-label">Browse</label>
+                <input type="file" class="form-control" id="benchmarkFile" name="filedata" placeholder="Select benchmark file">
+            </div>
           
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

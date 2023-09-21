@@ -19,10 +19,15 @@ def home(request):
 def simulation(request):
     if request.method == 'POST':
         # Retrieve user-provided Python code from POST request
-        sim_process_file_code = request.POST.get('sim_process_file_code')
+        simulation_period = request.POST.get('sim_process_file_code')
+        months = request.POST.get('months')
         sim_process_row_code = request.POST.get('sim_process_row_code')
         sim_save_output_code = request.POST.get('sim_save_output_code')
-        print("cccccccccccccccccccccccccccccsimuolation",sim_process_file_code)
+        cb = request.POST.get('cb')  # Checkbox value for "Remove Negative"
+        cb1 = request.POST.get('cb1')  # Checkbox value for "Round Lead Time"
+        browse = request.FILES.get('filedata')
+
+        print("cccccccccccccccccccccccccccccsimuolation",simulation_period)
 
         # Load data (replace this with your data source)
         df = pd.read_excel('your_data.xlsx')
