@@ -11,40 +11,37 @@
     <div class="container mt-5">
         <form action="/simulation/"  method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="mb-3">
-                <label for="leadTime" class="form-label">Simulation Period</label>
-                <input type="number" class="form-control" id="leadTime" name="sim_process_file_code" placeholder="Enter lead time adjustment">
-            </div>
-            <div class="mb-3">
-                <label for="leadTime" class="form-label">Select duration:</label>
-                <select class="form-select" id="leadTime" name="months">
+           <div class="mb-3 row">
+                <label for="simulation_period" class="form-label col-9">Simulation Period</label>
+                <input type="number" class="form-control col-9" id="simulation_period" name="simulation_period" min="1" step="1">
+                <select class="form-select col-3" id="duration_type" name="duration_type">
                     <option value="months">Months</option>
                     <option value="days">Days</option>
                 </select>
-            </div>
-            
+           </div>
+
             <div class="mb-3">
-                <label for="serviceLevel" class="form-label">composition deviation %</label>
-                <input type="number" class="form-control" id="serviceLevel" name="sim_process_row_code" placeholder="0.00">
+                <label for="serviceLevel" class="form-label">Consumption Deviation ( % )</label>
+                <input type="text" class="form-control" id="consumption_deviation" name="consumption_deviation" placeholder="0.00">
             </div>
             <div class="mb-3">
-                <label for="reviewPeriod" class="form-label">price unit if Na in file </label>
-                <input type="number" class="form-control" id="reviewPeriod" name="sim_save_output_code" placeholder="Enter review period">
+                <label for="reviewPeriod" class="form-label">Price/Unit (if NA in File) </label>
+                <input type="number" class="form-control" id="price_unit" name="price_unit">
             </div>
             <div class="mb-3">
                 <label for="removeNegative" class="form-label">Remove Negative</label>
-                <input type="checkbox" class="form-check-input" id="removeNegative" name="cb">
+                <input type="checkbox" class="form-check-input" id="removeNegative" name="Remove_Neg">
             </div>
             
             <div class="mb-3">
                 <label for="roundLeadTime" class="form-label">Round Lead Time</label>
-                <input type="checkbox" class="form-check-input" id="roundLeadTime" name="cb1">
+                <input type="checkbox" class="form-check-input" id="roundLeadTime" name="roundLeadTime">
             </div>
             
             
             <div class="mb-3">
                 <label for="benchmarkFile" class="form-label">Browse</label>
-                <input type="file" class="form-control" id="benchmarkFile" name="filedata" placeholder="Select benchmark file">
+                <input type="file" class="form-control" id="benchmarkFile" name="filedata" placeholder="Select Input File">
             </div>
           
             <button type="submit" class="btn btn-primary">Submit</button>

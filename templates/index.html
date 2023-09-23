@@ -13,20 +13,27 @@
             {% csrf_token %}
             <div class="mb-3">
                 <label for="leadTime" class="form-label">Lead Time Adjustment</label>
-                <input type="text" class="form-control" id="leadTime" name="lead_time" placeholder="Enter lead time adjustment">
+                <input type="text" class="form-control" id="leadTime" name="lead_time" placeholder="Days">
             </div>
             <div class="mb-3">
                 <label for="serviceLevel" class="form-label">Service Level</label>
-                <input type="text" class="form-control" id="serviceLevel" name="service_level" placeholder="Enter service level">
+                <input type="text" class="form-control" id="serviceLevel" name="service_level" placeholder="0-1">
             </div>
             <div class="mb-3">
                 <label for="reviewPeriod" class="form-label">Review Period</label>
-                <input type="text" class="form-control" id="reviewPeriod" name="review_period" placeholder="Enter review period">
+                <input type="text" class="form-control" id="reviewPeriod" name="review_period" placeholder="Days">
             </div>
             <div class="mb-3">
-                <label for="benchmark" class="form-label">Benchmark</label>
-                <input type="text" class="form-control" id="benchmark" name="benchmark" placeholder="Enter benchmark">
+                <label for="Benchmark" class="form-label">Benchmark</label>
+                <select class="form-select" id="benchmark" name="benchmark">
+                    <option value="No BenchMark">No BenchMark</option>
+                    <option value="Current Min">Current Min</option>
+                    <option value="Max Order">Max Order</option>
+                    <option value="Both (Current Min + Max Order)">Both (Current Min + Max Order)</option>
+                    <option value="Slow Moving Items">Slow Moving Items</option>
+                </select>
             </div>
+
             <div class="mb-3">
                 <label for="benchmarkFile" class="form-label">Browse</label>
                 <input type="file" class="form-control" id="benchmarkFile" name="filedata" placeholder="Select benchmark file">
