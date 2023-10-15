@@ -1,1 +1,2 @@
-web: gunicorn zaintask.wsgi --log-file -
+
+web: unicorn zaintask.wsgi --log-file -
